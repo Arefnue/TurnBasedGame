@@ -23,11 +23,15 @@ public class Unit : MonoBehaviour
     public int armor;
 
     public DamageIcon damageIcon;
+    public GameObject deathEffect;
 
     public GameObject weaponIcon;
 
+    private Animator camAnim;
+
     private void Start() {
         gm = FindObjectOfType<GameMaster>();
+        camAnim = Camera.main.GetComponent<Animator>();
     }
 
     private void OnMouseDown() {
@@ -80,6 +84,7 @@ public class Unit : MonoBehaviour
 
     void Attack(Unit enemy)
     {
+        camAnim.SetTrigger("shake");
         hasAttacked = true;
 
         int enemyDamage= attackDamage - enemy.armor;
@@ -100,11 +105,13 @@ public class Unit : MonoBehaviour
         }
         if(enemy.health <=0)
         {
+            Instantiate(deathEffect, enemy.transform.position,Quaternion.identity);
             Destroy(enemy.gameObject);
             GetWalkableTile();
         }
         if(health <= 0)
         {
+            Instantiate(deathEffect, transform.position,Quaternion.identity);
             gm.ResetTiles();
             Destroy(this.gameObject);
         }

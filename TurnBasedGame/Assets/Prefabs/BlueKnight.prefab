@@ -270,6 +270,8 @@ MonoBehaviour:
   armor: 1
   damageIcon: {fileID: 2469744704607567990, guid: 8a92421bd168ee84aba830ef48985cef,
     type: 3}
+  deathEffect: {fileID: 6468521233863081126, guid: 62b6c3e34389e1243846c446859d49c6,
+    type: 3}
   weaponIcon: {fileID: 2675924498030909519}
 --- !u!114 &4851619078342386409
 MonoBehaviour:

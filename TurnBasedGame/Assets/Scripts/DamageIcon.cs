@@ -4,21 +4,23 @@ using UnityEngine;
 
 public class DamageIcon : MonoBehaviour
 {
-   public Sprite[] damageSprites;
+    public Sprite[] damageSprites;
 
-   public float lifetime;
+    public float lifetime;
+    public GameObject effect;
 
     private void Start() 
     {
         Invoke("Destruction",lifetime);
     }
-   public void Setup(int damage)
-   {
-       GetComponent<SpriteRenderer>().sprite = damageSprites[damage-1];
-   }
+    public void Setup(int damage)
+    {
+        GetComponent<SpriteRenderer>().sprite = damageSprites[damage-1];
+    }
 
-   void Destruction()
-   {
-       Destroy(gameObject);
-   }
+    void Destruction()
+    {
+        Instantiate(effect,transform.position,Quaternion.identity);
+        Destroy(gameObject);
+    }
 }

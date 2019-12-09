@@ -103,6 +103,7 @@ MonoBehaviour:
   - {fileID: -7329945187716688285, guid: dfc71f493de56374c9d4f9b5100b4265, type: 3}
   - {fileID: -2705554616627016892, guid: dfc71f493de56374c9d4f9b5100b4265, type: 3}
   lifetime: 1.5
+  effect: {fileID: 1551191261403247986, guid: 190f790ffd4ac7545ba206dee340aa55, type: 3}
 --- !u!95 &117901494
 Animator:
   serializedVersion: 3
